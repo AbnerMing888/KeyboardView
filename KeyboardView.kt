@@ -123,7 +123,7 @@ class KeyboardView : View {
 
     /**
      * AUTHOR:AbnerMing
-     * INTRODUCE:设置按下的字母总长度
+     * INTRODUCE:设置按下的数字总长度
      */
     fun setNumberSize(size: Int) {
         mNumberSize = size
@@ -214,7 +214,7 @@ class KeyboardView : View {
             val wWord = rectWord.width()
             val htWord = rectWord.height()
             var yWord = rect.bottom - mHeight / 2 + (htWord / 2)
-            //下移
+            //上移
             if (i != 0 && i != 10 && mIsShowLetter) {
                 yWord -= htWord / 3
             }
@@ -242,6 +242,16 @@ class KeyboardView : View {
             }
         }
 
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        val heightSpecMode = MeasureSpec.getMode(heightMeasureSpec)
+        val widthSpecSize = MeasureSpec.getSize(widthMeasureSpec)
+        if (heightSpecMode == MeasureSpec.AT_MOST) {
+            //当高度为 wrap_content 时 设置一个合适的高度
+            setMeasuredDimension(widthSpecSize, (mHeight * 4 + mSpacing * 5 + 10).toInt())
+        }
     }
 
 
