@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="KeyboardView">
+        <attr name="background_color" format="color" />
+        <attr name="rect_background_color" format="color" />
+        <attr name="down_background_color" format="color" />
+        <attr name="text_color" format="color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="letter_text_size" format="dimension" />
+        <attr name="rect_height" format="dimension" />
+        <attr name="rect_spacing" format="dimension" />
+        <attr name="is_rect_letter" format="boolean" />
+        <attr name="number_size" format="integer" />
+    </declare-styleable>
+</resources>
